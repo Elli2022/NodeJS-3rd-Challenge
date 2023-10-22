@@ -3,10 +3,6 @@ export default function createPost({
   checkDir,
   readFromFile,
   writeToFile,
-  // access,
-  // mkdir,
-  // writeFile,
-  // readFile,
   logger,
 }) {
   return Object.freeze({ post });
