@@ -548,3 +548,7 @@
 {"level":"info","message":"[EXPRESS] Server running at http://127.0.0.1:3006","service":"authentication-ms","timestamp":"2023-10-22 13:56:01"}
 {"level":"info","message":"[undefined] Bootstraping micro service","service":"authentication-ms","timestamp":"2023-10-22 13:58:25"}
 {"level":"info","message":"[EXPRESS] Server running at http://127.0.0.1:3006","service":"authentication-ms","timestamp":"2023-10-22 13:58:25"}
+{"level":"info","message":"[undefined] Bootstraping micro service","service":"authentication-ms","timestamp":"2023-10-22 15:47:07"}
+{"level":"info","message":"[EXPRESS] Server running at http://127.0.0.1:3006","service":"authentication-ms","timestamp":"2023-10-22 15:47:07"}
+{"level":"info","message":"[undefined] Bootstraping micro service","service":"authentication-ms","timestamp":"2023-10-22 15:49:01"}
+{"level":"info","message":"[EXPRESS] Server running at http://127.0.0.1:3006","service":"authentication-ms","timestamp":"2023-10-22 15:49:02"}

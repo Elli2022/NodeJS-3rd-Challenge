@@ -11,6 +11,8 @@ const ERROR_MSG = {
   post: {
     NO_DATA: "no data to insert",
     EXISTING_USER: "user already exists",
+    INVALID_EMAIL: "Provided email is invalid",
+    MISSING_PARAMETER: "Needed parameter missing.",
   },
 };
 
@@ -21,6 +23,10 @@ const TEST_DATA = {
   },
   user2: {
     username: "user2",
+    password: "password",
+  },
+  user3: {
+    username: "user3",
     password: "password",
   },
 };
