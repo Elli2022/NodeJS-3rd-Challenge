@@ -13,6 +13,7 @@ import {
   writeToFile,
 } from "../../app/component/data-access";
 import createPost from "../../app/component/use-cases/post";
+import makeDataManipulation from "../../app/component/entities/data-manipulation";
 
 const post = ({ params }) =>
   createPost({
@@ -20,6 +21,7 @@ const post = ({ params }) =>
     checkDir,
     readFromFile,
     writeToFile,
+    makeDataManipulation,
     logger,
   }).post({
     params,

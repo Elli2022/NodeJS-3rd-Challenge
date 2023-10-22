@@ -3,8 +3,11 @@ export default function createPost({
   checkDir,
   readFromFile,
   writeToFile,
+  makeDataManipulation, // <- Lägg till detta
   logger,
 }) {
+  const dataManipulation = makeDataManipulation(); // <- Skapa en instans här
+
   return Object.freeze({ post });
 
   async function post({
@@ -23,15 +26,15 @@ export default function createPost({
       user = {
         username: userFactory.username(),
         password: userFactory.password(),
-        created: userFactory.created(),
-        modified: userFactory.modified(),
+        created: dataManipulation.transformDate(userFactory.created()), // <- Använd dataManipulation här
+        modified: dataManipulation.transformDate(userFactory.modified()), // <- och här
       };
 
       await checkDir({ fileDirPath, fileDirName });
       const content = await readFromFile({ filePath, filename });
       const duplicate = content.filter((el) => el.username == user.username);
 
-      if (duplicate.lenght) throw new Error(errorMsgs.EXISTING_USER);
+      if (duplicate.length) throw new Error(errorMsgs.EXISTING_USER);
       content.push(user);
       await writeToFile({ content, filePath, filename });
       logger.info("[POST] [USE-CASE] Inserting Object process - DONE!");

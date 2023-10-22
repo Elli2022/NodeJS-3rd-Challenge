@@ -1,14 +1,14 @@
-// import { readFile } from "fs/promises";
-export default function createGet({ access, readFile, logger }) {
+export default function createGet({ checkDir, readFromFile, logger }) {
   return Object.freeze({ get });
 
   async function get(params, filePath, filename) {
     try {
       logger.info(`[USE-CASE] [GET] Reading from files ${filename} -START!`);
-      await access(filePath);
-      const fileContent = await readFile(filePath);
+
+      const fileContent = await readFromFile({ filePath, filename });
+
       logger.info(`[USE-CASE] [GET] Reading from files ${filename} -END!`);
-      return JSON.parse(fileContent);
+      return fileContent; // Antagligen är det redan i JSON-format, eftersom readFromFile bör hantera JSON-parsing.
     } catch (e) {
       throw e.message;
     }

@@ -27,7 +27,7 @@ export default function createServer(options: ServerOptions) {
 
     options.app.get("/", (req, res) =>
       res.json({
-        data: "jag är hungrig men sysslar med validering nu",
+        data: "jag är hungrig igen, vi har gått en promenad, snart ska jag hoppa in i duschen. orkar inte detta mer.",
       })
     );
     options.app.post("/", (req, res) => res.json({ body: req.body }));

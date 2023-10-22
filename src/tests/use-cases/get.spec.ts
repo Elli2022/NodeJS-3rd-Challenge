@@ -4,11 +4,16 @@ import config from "./../../tests/config";
 import createGet from "./../../app/component/use-cases/get"; // Antagit att ".ts" inte behövs
 import { after, before, it, describe } from "node:test";
 import { expect } from "chai";
+import {
+  checkDir,
+  writeToFile,
+  readFromFile,
+} from "../../app/component/data-access/index";
 
 const get = (params) =>
   createGet({
-    access,
-    readFile,
+    checkDir,
+    readFromFile,
     logger,
   }).get(params, config.FILE_DB_PATH, config.FILE_DB_NAME);
 
